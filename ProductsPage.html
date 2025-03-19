@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Product Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Sensation';
+            src: url('fonts/Sensation.ttf') format('truetype'),
+                 url('fonts/Sensation.woff') format('woff'),
+                 url('fonts/Sensation.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #333;
+        }
+       
+        header {
+            background: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7D00FF;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        ul li a:hover {
+            color: #7D00FF;
+        }
+
+        .active {
+            color: #7D00FF;
+            font-weight: 600;
+        }
+
+        .auth {
+            display: flex;
+            gap: 15px;
+        }
+
+        .auth button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 33px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .login {
+            background: transparent;
+            border: 8px solid #7D00FF;
+            color: #7D00FF;
+        }
+
+        .login:hover {
+            background: #7D00FF;
+            color: white;
+        }
+
+        .get-started {
+            background: #7D00FF;
+            color: white;
+        }
+
+        .get-started:hover {
+            background: #7D00FF;
+        }
+        .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        outline: #7D00FF;
+    }
+
+        .containers {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 20%; /* Reduced sidebar width */
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            width: 80%; /* Increased content width */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 15px; /* Reduced gap between cards */
+        }
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 18px; /* Smaller heading size */
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+        .categories, .price-range {
+            margin-bottom: 20px;
+        }
+        .categories ul, .price-range ul {
+            list-style: none;
+            padding: 0;
+        }
+        .categories li, .price-range li {
+            margin: 8px 0; /* Reduced margin */
+        }
+        .categories a, .price-range a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 14px; /* Smaller font size */
+        }
+        .categories a:hover, .price-range a:hover {
+            color: #7D00FF;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 220px; /* Smaller image height */
+            object-fit: cover; /* Ensures the image covers the area */
+        }
+        .product-card h3 {
+            font-size: 16px; /* Smaller font size */
+            color: #2c3e50;
+            margin: 10px; /* Reduced margin */
+        }
+        .product-card p {
+            font-size: 12px; /* Smaller font size */
+            color: #7f8c8d;
+            margin: 0 10px 10px; /* Reduced margin */
+        }
+        .product-card .price {
+            font-size: 14px; /* Smaller font size */
+            color: #27ae60;
+            font-weight: bold;
+            margin: 0 10px 10px; /* Reduced margin */
+        }
+        .product-card .btn {
+            display: block;
+            text-align: center;
+            background: #7D00FF;
+            color: white;
+            padding: 8px; /* Reduced padding */
+            margin: 10px; /* Reduced margin */
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .product-card .btn:hover {
+            background: #7D00FF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">&#10227;</div>
+            <ul>
+                <li><a href="Homepage.html">Home Page</a></li>
+                <li><a href="Products Page.html"class="active">Products</a></li>
+                <li><a href="Discount_page.html">Discounts</a></li>
+                <li><a href="about_us.html">About us</a></li>
+                <li><a href="Contact_us.html">Contact Us</a></li>            
+            </ul>
+            <div class="auth">
+               <a href="sign_in_up.html"> <button class="login">Log in</button>
+                <button class="get-started">Get Started</button>
+            </a>
+            </div>
+        </nav>
+    </header>
+    <div class="containers">
+        <div class="sidebar">
+            <h2>Categories</h2>
+            <div class="categories">
+                
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Gaming</a></li>
+            
+            </div>
+            <h2>Price Range</h2>
+            <div class="price-range">
+                
+                    <li><a href="#">Under $100</a></li>
+                    <li><a href="#">$100 - $500</a></li>
+                    <li><a href="#">$500 - $1000</a></li>
+                    <li><a href="#">Over $1000</a></li>
+                
+            </div>
+        </div>
+        <div class="content">
+            <div class="product-card">
+                <img src="Ultrabook_pro.jpg" alt="UltraBook Pro">
+                <h3>UltraBook Pro</h3>
+                <p>Lightweight and powerful laptop for professionals.</p>
+                <p class="price">$799.99</p>
+                <a href="ViewDetails.html" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="Iphone_x.jpg" alt="Iphone X">
+                <h3>SmartPhone X</h3>
+                <p>Latest smartphone with advanced features.</p>
+                <p class="price">$799.99</p>
+                <a href="Iphone_x_detailpage.html" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="tablet_plus.jpg" alt="Tablet Plus">
+                <h3>Tablet Plus</h3>
+                <p>High-performance tablet for work and play.</p>
+                <p class="price">$699.99</p>
+                <a href="tablet_plus_detailtspage.html" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="gaming_laptop.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1099.99</p>
+                <a href="gaming_laptop_details.html" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="iphone11promax.jpg" alt="Iphone 11 pro max">
+                <h3>Iphone 11 pro max</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$299.99</p>
+                <a href="iphone11promaxdetails.html" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="samsungs25ultra.jpg" alt="Samsung S 25 Ultra">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1299.99</p>
+                <a href="samsungs25details.html" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>Powerful gaming laptop with high-end graphics.</p>
+                <p class="price">$1499.99</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <!-- Add more product cards as needed -->
+        </div>
+    </div>
+</body>
+</html>

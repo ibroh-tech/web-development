@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Trends</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+       font-family: 'Sensation';
+       src: url('fonts/Sensation.ttf') format('truetype'),
+            url('fonts/Sensation.woff') format('woff'),
+            url('fonts/Sensation.woff2') format('woff2');
+       font-weight: normal;
+       font-style: normal;
+   }
+   body {
+       font-family: 'Sensation', sans-serif;
+       margin: 10px;
+       padding: 10px;
+       background-color: #ffffff;
+   }
+
+   header {
+       background: #ffffff;
+       padding: 20px 50px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
+   }
+
+   nav {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       width: 100%;
+       max-width: 900px;
+   }
+
+   .logo {
+       font-size: 24px;
+       font-weight: bold;
+       color: #7D00FF;
+   }
+
+   ul {
+       list-style: none;
+       display: flex;
+       gap: 35px;
+       margin: 0;
+       padding: 0;
+   }
+
+   ul li a {
+       text-decoration: none;
+       color: black;
+       font-weight: 600;
+       font-size: 16px;
+       transition: color 0.3s;
+   }
+
+   ul li a:hover {
+       color: #5260E0;
+   }
+
+   .active {
+       color: #7D00FF;
+       font-weight: 600;
+   }
+
+   .auth {
+       display: flex;
+       gap: 15px;
+   }
+
+   .auth button {
+       border: none;
+       padding: 10px 20px;
+       border-radius: 33px;
+       cursor: pointer;
+       font-size: 16px;
+       transition: background-color 0.3s, color 0.3s;
+   }
+
+   .login {
+       background: transparent;
+       border: 8px solid #7D00FF;
+       color: #7D00FF;
+   }
+
+   .login:hover {
+       background: #7D00FF;
+       color: white;
+   }
+
+   .get-started {
+       background: #7D00FF;
+       color: white;
+   }
+
+   .get-started:hover {
+       background: #7D00FF;
+   }
+
+   .hero {
+       display: flex;
+       align-items: flex-start;
+       justify-content: space-between;
+       padding: 50px 100px;
+       max-width: 1200px;
+       margin: 0 auto;
+   }
+
+   .text-content {
+       max-width: 500px;
+       text-align: left;
+   }
+
+   .text-content h1 {
+       font-size: 56px;
+       font-weight: 700;
+       margin-bottom: 10px;
+   }
+
+   .highlight {
+       color: #7D00FF;
+   }
+
+   .text-content p {
+       font-size: 24px;
+       margin: 10px 0 20px;
+       margin-top: 70px;
+   }
+
+   .explore {
+       background: #7D00FF;
+       color: white;
+       padding: 12px 30px;
+       border: none;
+       border-radius: 33px;
+       cursor: pointer;
+       font-size: 16px;
+       transition: background-color 0.3s;
+       margin-top: 155px;
+   }
+
+   .explore:hover {
+       background: #7D00FF;
+   }
+
+   .images {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 20px;
+       max-width: 500px;
+   }
+
+   .image-card {
+       position: relative;
+       background: white;
+       border-radius: 32px;
+       overflow: hidden;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: transform 0.3s;
+
+   }
+
+   .image-card img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       border-radius: 10px;
+       transition: transform 0.3s ease;
+   }
+
+   .image-card:hover img {
+       transform: scale(1.1);
+   }
+
+   .wide {
+       grid-column: span 2;
+   }
+
+   .tag {
+       position: absolute;
+       top: 10px;
+       left: 10px;
+       background: #E3F0FA;
+       color: black;
+       padding: 5px 10px;
+       border-radius: 33px;
+       font-size: 12px;
+   }
+
+       /* Container for Categories */
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 40px;
+   margin-top: 50px;
+   flex-wrap: wrap;
+   max-width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   outline: #7D00FF;
+}
+
+/* Category Box */
+.category {
+   text-align: center;
+   width: 150px;
+   cursor: pointer;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   border-radius: 32px;
+}
+
+
+
+/* Category Text */
+.category p {
+   font-size: 16px;
+   margin-top: 10px;
+   color: #7D00FF;
+}
+
+/* Hover Effects for Categories */
+.category:hover {
+   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Products Section */
+.products {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 25px;
+   padding: 40px 20px;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+/* Product Card */
+.product {
+   background-color: #ffffff;
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 6px 12px rgba(129, 159, 243, 0.1);
+}
+
+/* Product Image */
+.product img {
+   width: 100%;
+   height: auto;
+   max-height: 200px;
+   object-fit: contain;
+}
+
+/* Product Content */
+.product-content {
+   padding: 20px;
+   text-align: center;
+}
+
+/* Product Title */
+.product h2 {
+   font-size: 20px;
+   font-weight: 600;
+   margin: 0;
+   color: #1a1a1a;
+}
+
+/* Product Price */
+.product h4 {
+   font-size: 18px;
+   color: #7D00FF;
+   margin: 10px 0;
+}
+
+/* Product Description */
+.product p {
+   font-size: 14px;
+   color: #1a1a1a;
+   margin: 5px 0;
+}
+
+/* Buy Now Button */
+.buy-now {
+   background-color: #7D00FF;
+   color: #ffffff;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 33px;
+   cursor: pointer;
+   font-weight: 500;
+   transition: background-color 0.3s ease;
+   width: 100%;
+   margin-top: 15px;
+}
+
+.buy-now:hover {
+   background-color: #7D00FF;
+}
+  </style>
+</head>
+
+<body>
+<header>
+  <nav>
+    <div class="logo">&#10227;</div>
+    <ul>
+      <li><a href="Homepage.html" class="active">Home Page</a></li>
+      <li><a href="ProductsPage">Products</a></li>
+      <li><a href="Discount_page.html">Discounts</a></li>
+      <li><a href="about_us.html">About us</a></li>
+      <li><a href="Contact_us.html">Contact Us</a></li>
+    </ul>
+    <div class="auth">
+      <a href="sign_in_up.html"> <button class="login">Log in</button>
+        <button class="get-started">Get Started</button>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="text-content">
+    <h1>Discover the Tech <br><span class="highlight">Tech Trends</span></h1>
+    <p>Shop the Latest Tech Items and Stay ahead of the game</p>
+    <a href="Products Page.html"> <button class="explore">Explore More →</button> </a>
+  </div>
+  <div class="images">
+    <div class="image-card"><span class="tag">New</span><img src="iphone_16_max.png" alt="iPhone"></div>
+    <div class="image-card"><span class="tag">New</span><img src="iphone_16.jpg" alt="Samsung"></div>
+    <div class="image-card wide"><span class="tag">New</span><img src="iphone_14.png" alt="iPhone Pro"></div>
+
+  </div>
+</section>
+<div class="container">
+  <div class="category">
+    <p>Smartphones</p>
+  </div>
+  <div class="category">
+    <p>Pc and Laptops</p>
+  </div>
+  <div class="category">
+    <p>Tablets</p>
+  </div>
+  <div class="category">
+    <p>Smart Watches</p>
+  </div>
+  <div class="category">
+    <p>Earphones</p>
+  </div>
+</div>
+<section class="products">
+  <a href="iphone-15-pro">
+    <div class="product">
+      <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="iPhone 15 Pro">
+      <div class="product-content">
+        <h2>iPhone</h2>
+        <h4>$500</h4>
+        <p>Available in 4 colors</p>
+        <button class="buy-now">Add to cart</button>
+      </div>
+    </div>
+  </a>
+  <div class="product">
+    <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="iPhone 15">
+    <div class="product-content">
+      <h2>iPhone</h2>
+      <h4>$500</h4>
+      <p>Available in 5 colors</p>
+      <button class="buy-now">Add to cart</button>
+    </div>
+  </div>
+  <div class="product">
+    <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="iPhone 16 Pro">
+    <div class="product-content">
+      <h2>iPhone</h2>
+      <h4>$500</h4>
+      <p>Available in 4 colors</p>
+      <button class="buy-now">Add to cart</button>
+    </div>
+  </div>
+  <div class="product">
+    <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="iPhone 16 Blue">
+    <div class="product-content">
+      <h2>iPhone</h2>
+      <h4>$500</h4>
+      <p>Available in 5 colors</p>
+      <button class="buy-now">Add to cart</button>
+    </div>
+  </div>
+  </div>
+  <div class="product">
+    <img src="9Gg3Q3FkqFioKXxqEIORdn0nwugcGx56V7tue9kn.jpg" alt="iPhone 16 Blue">
+    <div class="product-content">
+      <h2>iPhone</h2>
+      <h4>$500</h4>
+      <p>Available in 5 colors</p>
+      <button class="buy-now">Add to cart</button>
+    </div>
+  </div>
+
+</section>
+
+</body>
+
+</html>
